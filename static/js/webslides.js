@@ -398,6 +398,17 @@ var Slide = function () {
      * @type {Element}
      */
     this.el = el;
+    this.hasFragments = false;
+    // fragment
+    this.fragments = this.el.querySelectorAll(".custom-fragment");
+    this.fragmentLength = this.fragments.length;
+    if(this.fragments){
+      for (var fi=0; fi <this.fragmentLength;fi++){
+        this.fragments[fi].style.visibility='hidden';
+      }
+      this.hasFragments = true;
+    }
+    this.fragmentIndex = -1;
     /**
      * The section's parent.
      * @type {Node}
@@ -410,6 +421,8 @@ var Slide = function () {
 
     this.el.id = 'section-' + (i + 1);
     this.el.classList.add(CLASSES.SLIDE);
+
+
 
     // Hide slides by default
     this.hide();
@@ -443,6 +456,31 @@ var Slide = function () {
      * @fires Slide#dom:leave
      * @fires Slide#dom:enter
      */
+
+  }, {
+    // fragment
+    key: 'showFragment',
+    value: function showFragment() {
+      if(this.hasFragments){
+        if(this.fragmentIndex < (this.fragmentLength -1)){
+            this.fragmentIndex = this.fragmentIndex + 1;
+            this.fragments[this.fragmentIndex].style.visibility = 'visible';
+        }
+      }
+    }
+
+  }, {
+    // fragment
+    key: 'hideFragment',
+    value: function hideFragment() {
+      if(this.hasFragments){
+        if(this.fragmentIndex >= 0){
+          this.fragments[this.fragmentIndex].style.visibility = 'hidden';
+          this.fragmentIndex = this.fragmentIndex - 1;
+        }
+      }
+
+    }
 
   }, {
     key: 'moveAfterLast',
@@ -570,7 +608,10 @@ var Keys = {
   PLUS: [107, 171, 187],
   MINUS: [109, 173, 189],
   ESCAPE: 27,
-  F: 70
+  F: 70,
+  SLASH: 191,
+  DOT: 190
+
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Keys);
@@ -980,6 +1021,20 @@ var WebSlides = function () {
      * This parameter is used only from the goNext, goPrev functions to adjust the
      * scroll animations.
      */
+
+  }, {
+    // fragment
+    key: 'showFragment',
+    value: function showFragment(){
+      this.currentSlide_.showFragment();
+    }
+
+  }, {
+    // fragment
+    key: 'hideFragment',
+    value: function hideFragment(){
+      this.currentSlide_.hideFragment();
+    }
 
   }, {
     key: 'goToSlide',
@@ -1816,6 +1871,12 @@ var Keyboard = function () {
             method = this.ws_.fullscreen;
           }
 
+          break;
+        case __WEBPACK_IMPORTED_MODULE_0__utils_keys__["a" /* default */].SLASH:
+          method = this.ws_.showFragment;
+          break;
+        case __WEBPACK_IMPORTED_MODULE_0__utils_keys__["a" /* default */].DOT:
+          method = this.ws_.hideFragment;
           break;
       }
 
