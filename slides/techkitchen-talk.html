@@ -14,6 +14,7 @@
     <!-- CSS Base -->
     <link rel="stylesheet" type='text/css' media='all' href="../static/css/webslides.css">
 
+
     <!-- Optional - CSS SVG Icons (Font Awesome) -->
     <link rel="stylesheet" type="text/css" media="all" href="../static/css/svg-icons.css">
 
@@ -42,7 +43,7 @@
           <span class="background dark" style="background-image:url('https://source.unsplash.com/uQs1802D0CQ/')"></span>
           <div class="wrap aligncenter">
             <h1 class="text-landing">
-              Recipe Title to ingredients
+              Predicting Ingredients from Recipe Title
             </h1>
             <h5 class="text-subtitle">
               A step towards smart recipe editor
@@ -56,21 +57,40 @@
           <div class="wrap">
             <div class="content-left">
               <h1 class="text-landing">Inspiration </h1>
-              <p class="text-context"> Rise of smart machines has revolutionized human-computer interaction.
-              <br> As the machine grow smarter less human effort is required. Machines will complete the job for you.</p>
-              <!--<ul class="flexblock features">
-                <li>
-                  <p> Rise of smart machines has revolutionized human-computer interaction. </p>
-                </li>
-                <li>
-                  <p> As the machine grow smarter less human effort is required. Machines will complete the job for you.</p>
-                </li>
-              </ul>-->
+              <p class="text-context"> Rise of smart machines has revolutionized human-computer interaction. As the machine grow smarter less human effort is required. Machines will complete the job for you.</p>
             </div>
           </div>
         </section>
 
         <!-- slide 3 -->
+        <section class="bg-white">
+          <div class="wrap">
+            <h3 class="text-landing">Smart Human-Computer Interaction</h3>
+            <hr>
+            <div class="grid vertical-align">
+              <div class="column">
+                <p> Smart Compose by google </p>
+                <img src="https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Smart-compose_Taco_Tuesday.gif">
+              </div>
+              <div class="column">
+                <p> Smart Replies by linkedin </p>
+                <img src="https://blog.linkedin.com/content/dam/blog/en-us/corporate/blog/2017/smart_replies_blogimage.jpg">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- slide 4 -->
+        <section class="bg-white">
+          <span class="background dark" style="background-image:url('https://source.unsplash.com/j6brni7fpvs/')"></span>
+          <div class="wrap size-60">
+            <p class="text-context" style="font-size:35px;">Goal</p>
+            <h2><strong>Smart Recipe Editor</strong>: Reduce the user’s effort in creating recipes. (Let the machine do the redundant work 😜)</h2>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <!-- slide 5 -->
         <section class="fullscreen bg-white">
           <div class="card-50">
             <figure>
@@ -92,7 +112,7 @@
           </div>
         </section>
 
-        <!-- slide 4 -->
+        <!-- slide 6 -->
         <section class="fullscreen bg-white">
           <div class="card-50">
             <figure>
@@ -114,6 +134,155 @@
           </div>
         </section>
 
+        <!-- slide 7 -->
+        <section class="bg-black">
+          <span class="background light" style="background-image:url('https://source.unsplash.com/HH4WBGNyltc/')"></span>
+          <div class="content-center">
+            <h2 class="text-landing"><strong><span style="color:#dc3545;">Recipe Title</span> contains enough information</strong></h2>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <!-- slide 8 -->
+        <section class="bg-gradient-v">
+          <span class="background light" style="background-image:url('https://source.unsplash.com/5gn2soeAc40/')"></span>
+          <div class="wrap">
+            <h1 class="text-landing" style="color:#dc3545"><strong>Demo</strong></h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <!--slide 9-->
+        <section class="aligncenter">
+          <h2 class="text-landing">How does it work?</h2>
+        </section>
+
+        <section class="bg-white aligncenter">
+          <div class="wrap">
+            <h2 class="text-landing" style="color:#d81b60;">Embed</h2>
+            <br>
+            <figure>
+              <img src="../static/images/embed.png">
+            </figure>
+          </div>
+        </section>
+
+        <section class="bg-white aligncenter">
+          <div class="wrap">
+            <h2 class="text-landing" style="color:#d81b60;">Suggest</h2>
+            <br>
+            <br>
+            <br>
+            <figure>
+              <img src="../static/images/api.png">
+            </figure>
+          </div>
+        </section>
+
+
+        <section class="bg-gradient-gray">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-70">
+            <h1 class="text-landing">Word Embedding Model</h1>
+            <hr>
+            <div class="bg-white shadow">
+              <h4> I used  <a href="https://research.fb.com/">facebook research's</a> <a href="https://github.com/facebookresearch/fastText">fasttext</a> to learn vector representation for words</h4>
+              <h4><strong>Why Fasttext?</strong></h4>
+
+              <ul class="flexblock reasons">
+                <li>
+                  <h2>Generate better word embeddings for rare words</h2>
+                  <p>Fasttext treats each word as composed of character ngrams. even if words are rare their character n grams are still shared with other words - hence the embeddings can still be good. For example：中華風 which is rare shares character n-grams with common words like 中華丼 and 中華サラダ hence a good word embedding can be learned using fasttext </p>
+                </li>
+                <li>
+                  <h2> Can learn out of vocabulary words.</h2>
+                  <p>Fasttext can construct the vector for a word from its character n grams even if word doesn't appear in training corpus.</p>
+                </li>
+              </ul>
+            </div>
+            <!-- .end bg-white.shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-gradient-gray">
+          <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-70">
+            <h1 class="text-landing">Sentence Embedding Model</h1>
+            <hr>
+            <div class="bg-white shadow">
+              <h4> One way is to just use Average of word vectors as Sentence vector.</h4>
+              <ul>
+                <li>
+                  <p> This approach is similar to Bag of Words model.</p>
+                </li>
+                <li>
+                  <p> it ignores order of words. But is the order of word important here?.</p>
+                </li>
+                <li>
+                  <p> Ex: “Butter Chicken Pasta! very easy! “, “Easy Butter chicken Pasta”.</p>
+                </li>
+                <li>
+                  <p> Also, I have seen  people using same approach to learn vector representation of tweets and obtain good enough results.</p>
+                </li>
+              </ul>
+            </div>
+            <!-- .end bg-white.shadow -->
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-white">
+          <div class="wrap">
+            <h2 class="text-landing" style="color:#d81b60;">Sentence Embedding Model(Supervised training)</h2>
+            <br>
+            <ul>
+              <li>
+                <p>Create Dataset </p>
+              </li>
+              <li>
+                <p>Train the below model </p>
+              </li>
+              <li>
+                <p>Use the F(-) to embed sentences </p>
+              </li>
+            </ul>
+            <figure>
+              <img src="../static/images/bilstm_sentence_embedding.png">
+            </figure>
+          </div>
+        </section>
+
+
+        <section class="bg-white">
+          <div class="wrap">
+            <h2 class="text-landing" style="color:#d81b60;">Results</h2>
+            <table>
+              <tr>
+                <th></th>
+                <th>3 out of 5 suggested ingredients matches actual(%)</th>
+                <th>2 out of 5 suggested ingredients matches actual(%)</th>
+              </tr>
+              <tr>
+                <td>Average of word embeddings</td>
+                <td>53%</td>
+                <td>80%</td>
+              </tr>
+              <tr>
+                <td>Bi-LSTM Sentence Embeddings</td>
+                <td>50%</td>
+                <td>76%</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+
+        <section class="aligncenter">
+          <div class="wrap">
+            <h1 class="text-landing">Thank you</h1>
+          </div>
+          <!-- .end .wrap -->
+        </section>
 
       </article>
 
