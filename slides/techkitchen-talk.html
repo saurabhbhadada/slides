@@ -73,6 +73,7 @@
                 </li>
                 <li><h4> Joined R&D in November last year</h4></li>
                 <li><h4> <strong>24 </strong>Years old. I look much older. right? (My mother says its because I don't drink enough water 😜) </h4></li>
+                <li><h4> I spend more time in Kitchen then at my desk.</h4></li>
               </div>
               <!-- end .flex-content-->
             </div>
@@ -80,6 +81,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
+
 
         <!-- slide 3 -->
         <section class="bg-white">
@@ -282,22 +284,24 @@
           <!--.wrap = container (width: 90%) -->
           <div class="wrap">
             <h1 class="text-landing" style="color:#d81b60;">Sentence Embedding Model</h1>
-            <h4> One way is to just use <strong>Average of word vectors</strong> as Sentence vector.</h4><br>
+            <h4> One way is to just use <strong>Average of word vectors</strong> as Sentence vector.</h4><br><br>
             <!-- <ul style="font-size:25px;"> -->
-            <ul>
-              <li>
-                <p> This approach is similar to Bag of Words model.</p>
-              </li>
-              <li>
-                <p> it ignores order of words. But is the order of word important here?.</p>
-              </li>
-              <li>
-                <p> Ex: “Butter Chicken Pasta! very easy! “, “Easy Butter chicken Pasta”.</p>
-              </li>
-              <li>
-                <p> Also, I have seen  people using same approach to learn vector representation of tweets and obtain good enough results.</p>
-              </li>
-            </ul>
+            <div style="font-size:30px;line-height:2.0;">
+              <ul>
+                <li>
+                  <p> This approach is similar to Bag of Words model.<br><br></p>
+                </li>
+                <li>
+                  <p> it ignores order of words. But is the order of word important here?.<br><br></p>
+                </li>
+                <li>
+                  <p> Ex: “Butter Chicken Pasta! very easy! “, “Easy Butter chicken Pasta”.<br><br></p>
+                </li>
+                <li>
+                  <p> Also, I have seen  people using same approach to learn vector representation of tweets and obtain good enough results.<br><br></p>
+                </li>
+              </ul>
+            </div>
             <!-- .end bg-white.shadow -->
           </div>
           <!-- .end .wrap -->
@@ -307,20 +311,22 @@
           <div class="wrap">
             <h2 class="text-landing" style="color:#d81b60;">Sentence Embedding Model(Supervised training)</h2>
             <br>
-            <ul>
-              <li>
-                <p>Create Dataset: <strong>{Recipe title 1, Recipe title 2, Jaccard Similarity}</strong> </p>
-              </li>
-              <li>
-                <p>Train the below model </p>
-              </li>
-              <li>
-                <p>Use the F(-) learned in below network to embed sentences </p>
-              </li>
-            </ul>
-            <figure>
-              <img src="../static/images/bilstm_sentence_embedding.png">
-            </figure>
+            <div style="font-size:30px;line-height:2.0;">
+              <ul>
+                <li>
+                  <p>Create Dataset: <strong>{Recipe title 1, Recipe title 2, Jaccard Similarity}</strong><br><br> </p>
+                </li>
+                <li>
+                  <p>Train the below model<br><br> </p>
+                </li>
+                <li>
+                  <p>Use the F(-) learned in below network to embed sentences<br><br> </p>
+                </li>
+              </ul>
+              <figure>
+                <img src="../static/images/bilstm_sentence_embedding.png">
+              </figure>
+            </div>
           </div>
         </section>
 
